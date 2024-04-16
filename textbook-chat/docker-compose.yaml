@@ -1,0 +1,24 @@
+version: '3'
+services:
+  textbook-chat:
+    image: node:20-alpine
+    stdin_open: true
+    tty: true
+    # ports: 
+    #   - 8000:8000
+    #   - 3000:3000
+    network_mode: host
+    privileged: true
+    user: root
+    working_dir: /app
+    # command: 'sh'
+    # command: ["npm", "install"]
+    # command: ["npm", "run", "generate"]
+    command: ["npm", "run", "dev"]
+    # command: ["npm", "run", "build"]
+    # command: ["npm", "run", "start"]
+    environment:
+      - AZURE_OPENAI_KEY=**********
+      - AZURE_OPENAI_ENDPOINT=http://127.0.0.1:5002
+    volumes:
+      - ./:/app:rw

@@ -12,13 +12,12 @@ export default function ChatAvatar({ role }: { role: string }) {
 
   return (
     <div className="flex h-8 w-8 shrink-0 select-none items-center justify-center rounded-md border shadow">
-      <Image
+      <img
         className="rounded-md"
         src="https://ai.uni-bremen.de/lib/tpl/agkitpl/images/ai_small.png"
         alt="avatar"
         width={24}
         height={24}
-        priority
       />
     </div>
   );

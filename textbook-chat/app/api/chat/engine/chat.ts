@@ -1,7 +1,19 @@
-import { ContextChatEngine, LLM } from "llamaindex";
+import { ContextChatEngine, LLM, TextQaPrompt } from "llamaindex";
 import { getDataSource } from "./index";
 
 export async function createChatEngine(llm: LLM) {
+
+  // Define a custom prompt
+  const newTextQaPrompt: TextQaPrompt = ({ context, query }) => {
+    return `Context information is below.
+  ---------------------
+  ${context}
+  ---------------------
+  Given the context information and no prior knowledge, answer the query. 
+  Query: ${query}
+  Answer:`;
+  };
+
   const index = await getDataSource(llm);
   if (!index) {
     throw new Error(
@@ -14,5 +26,6 @@ export async function createChatEngine(llm: LLM) {
   return new ContextChatEngine({
     chatModel: llm,
     retriever,
+    contextSystemPrompt: newTextQaPrompt,
   });
 }

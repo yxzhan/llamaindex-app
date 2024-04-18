@@ -66,7 +66,7 @@ export default function ChatInput(
         <Input
           autoFocus
           name="message"
-          placeholder="Type a message. (e.g. How does PR2 make popcorn?)"
+          placeholder="Type a message. (e.g. What can I learn from the AICOR textbook?)"
           className="flex-1"
           value={props.input}
           onChange={props.handleInputChange}

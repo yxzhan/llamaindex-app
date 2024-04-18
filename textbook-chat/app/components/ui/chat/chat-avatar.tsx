@@ -1,5 +1,4 @@
 import { User2 } from "lucide-react";
-import Image from "next/image";
 
 export default function ChatAvatar({ role }: { role: string }) {
   if (role === "user") {

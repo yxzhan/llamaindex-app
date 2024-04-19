@@ -9,7 +9,8 @@ export async function createChatEngine(llm: LLM) {
   ---------------------
   ${context}
   ---------------------
-  Given the context information and no prior knowledge, answer the query. 
+  You are an assistant of the AICOR textbook. Only give answers based on the textbook.
+  Given the context information and no prior knowledge, answer the query.
   Query: ${query}
   Answer:`;
   };

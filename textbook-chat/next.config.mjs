@@ -10,7 +10,7 @@ const jp_prefix = process.env.JUPYTERHUB_SERVICE_PREFIX
 if (jp_prefix !== undefined) {
     // nextConfig.basePath = jp_prefix + "proxy/3000"
     nextConfig.assetPrefix = jp_prefix + "proxy/3000"
-    process.env.NEXT_PUBLIC_CHAT_API = 'https://jupyter.intel4coro.de' + jp_prefix + "proxy/3000/api/chat"
+    process.env.NEXT_PUBLIC_CHAT_API = jp_prefix + "proxy/3000/api/chat"
 }
 
 export default nextConfig;
